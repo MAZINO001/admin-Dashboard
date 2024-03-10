@@ -1,7 +1,11 @@
+import { ColorModeContext, useMode } from "./Theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
 function App() {
-  return (
-div.app
-  )
+  
+  return <div className="app">
+
+  </div>;
 }
 
-export default App
+export default App;
