@@ -169,12 +169,13 @@ export const ThemeSettings = (mode) => {
             }
       ),
     },
+    
     typography: {
       fontFamily: ["Source Sans 3", "sans-serif"].join(","),
       fontSize: 12,
       h1: {
         fontFamily: ["Source Sans 3", "sans-serif"].join(","),
-        fontSize: 48,
+        fontSize: 40,
       },
       h2: {
         fontFamily: ["Source Sans 3", "sans-serif"].join(","),
@@ -207,6 +208,7 @@ export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useMode = () => {
   const [mode, setMode] = useState("dark");
   const colorMode = useMemo(

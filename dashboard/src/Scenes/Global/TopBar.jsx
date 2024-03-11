@@ -13,5 +13,15 @@ export default function TopBar() {
   const theme = useTheme();
   const colors = Tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
-  return <div>TopBar</div>;
+  return (
+    <Box display="flex" justifyContent="space-between" p={2}>
+      {/* searchbar  */}
+      <Box
+        display="flex"
+        backgrounColor={colors.primary[400]}
+        borderRadius="3px"
+      ></Box>
+      <IconButton></IconButton>
+    </Box>
+  );
 }
