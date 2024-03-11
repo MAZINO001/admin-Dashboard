@@ -132,44 +132,21 @@ export const ThemeSettings = (mode) => {
   return {
     palette: {
       mode: mode,
-      ...ThemeSettings(
-        mode === "dark"
-          ? {
-              primary: {
-                main: colors.primary[500],
-              },
-              secondary: {
-                // Corrected typo: 'Accnet' to 'Accent'
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                dark: colors.gray[900], // Consider using the darkest shade
-                main: colors.gray[500],
-                light: colors.gray[100],
-              },
-              background: {
-                default: colors.primary[500],
-              },
-            }
-          : {
-              primary: {
-                main: colors.primary[100],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                dark: colors.gray[700],
-                main: colors.gray[500],
-                light: colors.gray[100],
-              },
-              background: {
-                default: "#fcfcfc",
-              },
-            }
-      ),
+      primary: {
+        main: mode === "dark" ? colors.primary[500] : colors.primary[100],
+      },
+      secondary: {
+        main: colors.greenAccent[500],
+      },
+      neutral: {
+        dark: mode === "dark" ? colors.gray[900] : colors.gray[700],
+        main: colors.gray[500],
+        light: colors.gray[100],
+      },
+      background: {
+        default: mode === "dark" ? colors.primary[500] : "#fcfcfc",
+      },
     },
-    
     typography: {
       fontFamily: ["Source Sans 3", "sans-serif"].join(","),
       fontSize: 12,
@@ -219,5 +196,5 @@ export const useMode = () => {
     []
   );
   const theme = useMemo(() => createTheme(ThemeSettings(mode)), [mode]);
-  return { theme, colorMode };
+  return [ theme, colorMode ];
 };
