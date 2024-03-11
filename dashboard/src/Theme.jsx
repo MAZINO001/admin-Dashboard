@@ -1,7 +1,7 @@
 import { useState, useMemo, createContext } from "react";
-import { creatTheme } from "@mui/material";
+import { createTheme } from "@mui/material";
 
-//colr tokens
+// color tokens
 export const Tokens = (mode) => ({
   ...(mode === "dark"
     ? {
@@ -27,7 +27,8 @@ export const Tokens = (mode) => ({
           800: "#080b12",
           900: "#040509",
         },
-        greenAccnet: {
+        greenAccent: {
+          // corrected typo: 'Accnet' to 'Accent'
           100: "#dbf5ee",
           200: "#b7ebde",
           300: "#94e2cd",
@@ -38,7 +39,8 @@ export const Tokens = (mode) => ({
           800: "#1e5245",
           900: "#0f2922",
         },
-        redAccnet: {
+        redAccent: {
+          // corrected typo: 'Accnet' to 'Accent'
           100: "#f8dcdb",
           200: "#f1b9b7",
           300: "#e99592",
@@ -49,7 +51,8 @@ export const Tokens = (mode) => ({
           800: "#58201e",
           900: "#2c100f",
         },
-        blueAccnet: {
+        blueAccent: {
+          // corrected typo: 'Accnet' to 'Accent'
           100: "#e1e2fe",
           200: "#c3c6fd",
           300: "#a4a9fc",
@@ -84,7 +87,8 @@ export const Tokens = (mode) => ({
           800: "#a1a4ab",
           900: "#d0d1d5",
         },
-        greenAccnet: {
+        greenAccent: {
+          // corrected typo: 'Accnet' to 'Accent'
           100: "#0f2922",
           200: "#1e5245",
           300: "#2e7c67",
@@ -95,7 +99,8 @@ export const Tokens = (mode) => ({
           800: "#b7ebde",
           900: "#dbf5ee",
         },
-        redAccnet: {
+        redAccent: {
+          // corrected typo: 'Accnet' to 'Accent'
           100: "#2c100f",
           200: "#58201e",
           300: "#832f2c",
@@ -106,7 +111,8 @@ export const Tokens = (mode) => ({
           800: "#f1b9b7",
           900: "#f8dcdb",
         },
-        blueAccnet: {
+        blueAccent: {
+          // corrected typo: 'Accnet' to 'Accent'
           100: "#151632",
           200: "#2a2d64",
           300: "#3e4396",
@@ -120,7 +126,7 @@ export const Tokens = (mode) => ({
       }),
 });
 
-//mui theme settings
+// MUI theme settings
 export const ThemeSettings = (mode) => {
   const colors = Tokens(mode); // Assuming Tokens is defined elsewhere
   return {
@@ -133,13 +139,13 @@ export const ThemeSettings = (mode) => {
                 main: colors.primary[500],
               },
               secondary: {
-                // Corrected typo
-                main: colors.greenAccnet[500],
+                // Corrected typo: 'Accnet' to 'Accent'
+                main: colors.greenAccent[500],
               },
               neutral: {
-                dark: colors.gary[900], // Consider using the darkest shade
-                main: colors.gary[500],
-                light: colors.gary[100],
+                dark: colors.gray[900], // Consider using the darkest shade
+                main: colors.gray[500],
+                light: colors.gray[100],
               },
               background: {
                 default: colors.primary[500],
@@ -150,12 +156,12 @@ export const ThemeSettings = (mode) => {
                 main: colors.primary[100],
               },
               secondary: {
-                main: colors.greenAccnet[500],
+                main: colors.greenAccent[500],
               },
               neutral: {
-                dark: colors.gary[700],
-                main: colors.gary[500],
-                light: colors.gary[100],
+                dark: colors.gray[700],
+                main: colors.gray[500],
+                light: colors.gray[100],
               },
               background: {
                 default: "#fcfcfc",
@@ -194,6 +200,8 @@ export const ThemeSettings = (mode) => {
   };
 };
 
+// Context
+
 //context for the color mode
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
@@ -208,6 +216,6 @@ export const useMode = () => {
     }),
     []
   );
-  const theme = useMemo(() => creatTheme(ThemeSettings(mode)), [mode]);
+  const theme = useMemo(() => createTheme(ThemeSettings(mode)), [mode]);
   return { theme, colorMode };
 };

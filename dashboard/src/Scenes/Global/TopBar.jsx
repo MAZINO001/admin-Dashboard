@@ -1,7 +1,7 @@
-import { Box, IconButton, useTheme } from "@mui/material";
+/* eslint-disable no-unused-vars */
+import { Box, IconButton, InputBase, useTheme } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, Tokens } from "../../Theme";
-import InputBase from "@mui/material";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
@@ -12,6 +12,6 @@ import SearchIcon from "@mui/icons-material/Search";
 export default function TopBar() {
   const theme = useTheme();
   const colors = Tokens(theme.palette.mode);
-
+  const colorMode = useContext(ColorModeContext);
   return <div>TopBar</div>;
 }
