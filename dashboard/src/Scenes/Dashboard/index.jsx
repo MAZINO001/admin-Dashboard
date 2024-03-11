@@ -1,5 +1,3 @@
-export default function index() {
-  return (
-    <div>index</div>
-  )
+export default function Dashboard() {
+  return <div>Dashboard</div>;
 }
