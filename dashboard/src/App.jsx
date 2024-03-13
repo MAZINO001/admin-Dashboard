@@ -7,14 +7,14 @@ import Dashboard from "./Scenes/Dashboard";
 import Sidebar from "./Scenes/Global/SideBar";
 import Team from "./Scenes/Team";
 import Invoces from "./Scenes/invoces";
-// import Contacts from "./Scenes/contacts";
-// import Bar from "./Scenes/bar";
-// import Form from "./Scenes/form";
-// import Line from "./Scenes/line";
-// import Pie from "./Scenes/pie";
-// import FAQ from "./Scenes/faq";
-// import Geography from "./Scenes/geography";
-// import Calendar from "./Scenes/calendar";
+import Contacts from "./Scenes/contacts";
+import Bar from "./Scenes/bar";
+import Form from "./Scenes/form";
+import Line from "./Scenes/line";
+import Pie from "./Scenes/pie";
+import FAQ from "./Scenes/faq";
+import Geography from "./Scenes/geography";
+import Calendar from "./Scenes/calendar/calendar";
 
 function App() {
   const [theme, colorMode] = useMode();
