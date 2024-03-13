@@ -5,7 +5,7 @@ import { createTheme } from "@mui/material";
 export const Tokens = (mode) => ({
   ...(mode === "dark"
     ? {
-        gray: {
+        grey: {
           100: "#e0e0e0",
           200: "#c2c2c2",
           300: "#a3a3a3",
@@ -65,7 +65,7 @@ export const Tokens = (mode) => ({
         },
       }
     : {
-        gray: {
+        grey: {
           100: "#141414",
           200: "#292929",
           300: "#3d3d3d",
@@ -139,9 +139,9 @@ export const ThemeSettings = (mode) => {
         main: colors.greenAccent[500],
       },
       neutral: {
-        dark: mode === "dark" ? colors.gray[900] : colors.gray[700],
-        main: colors.gray[500],
-        light: colors.gray[100],
+        dark: mode === "dark" ? colors.grey[900] : colors.grey[700],
+        main: colors.grey[500],
+        light: colors.grey[100],
       },
       background: {
         default: mode === "dark" ? colors.primary[500] : "#fcfcfc",
@@ -196,5 +196,5 @@ export const useMode = () => {
     []
   );
   const theme = useMemo(() => createTheme(ThemeSettings(mode)), [mode]);
-  return [ theme, colorMode ];
+  return [theme, colorMode];
 };
