@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { ColorModeContext, useMode } from "./Theme";
-
 import { Route, Routes } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import TopBar from "./Scenes/Global/TopBar";
